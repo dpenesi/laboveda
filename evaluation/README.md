@@ -37,3 +37,30 @@ Este fragmento ilustra el formato; para ejecutar el evaluador se necesitan **tod
 - **Tasa de resultados falsos:** proporción de preguntas etiquetadas `sin_respuesta` que devuelven al menos una nota. No calcula precisión del texto generado.
 
 La salida incluye métricas generales, por categoría y por pregunta. Las preguntas sin respuesta se excluyen de recall y MRR; las categorías sin casos aplicables muestran `null`. La evaluación no verifica citas textuales, contenido de respuestas generadas, seguridad ni integridad de sincronización.
+
+## Ejecutar obsidian-rag de forma aislada
+
+Instalar la versión de `obsn` que se quiera comparar en un entorno Python separado. La siguiente ejecución copia este corpus ficticio a un directorio temporal, crea un índice aislado y solicita 20 resultados por pregunta. Rechaza índices que no estén `ready` o tengan fragmentos sin vector. Puede descargar el modelo configurado por defecto; la caché también es temporal salvo que se indique `--cache`.
+
+```bash
+python3 evaluation/run_obsn.py --obsn /ruta/al/entorno/bin/obsn > /tmp/laboveda-obsn.json
+python3 evaluation/evaluate.py --results /tmp/laboveda-obsn.json
+```
+
+El proceso no hereda variables de entorno que puedan apuntar a un vault, índice o credenciales personales. `--cache /ruta/a/cache` permite reutilizar una caché elegida explícitamente; no usar para esta prueba índices o vaults reales. El proceso elimina la copia y el índice temporales al finalizar.
+
+## Ejemplo de corrida real
+
+El archivo [`results/obsn-eebdd12.json`](results/obsn-eebdd12.json) contiene solo rutas de este corpus público. Se generó y repitió con:
+
+- obsidian-rag commit `eebdd1260ccb36a4adda53044103b9e77bb39b02`, versión 0.2.0; 20 chunks solicitados por consulta, deduplicados por nota antes de puntuar.
+- Python 3.12.3, fastembed 0.9.1, numpy 2.5.4, onnxruntime 1.31.1; modelo por defecto `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`.
+- Copia del vault e índice temporal aislado: 8 notas y 17/17 chunks con embeddings; ninguna nota personal. El modelo no estaba fijado a un hash de revisión, por lo que una descarga futura puede variar.
+
+Para calcular de nuevo las métricas del archivo sin instalar el buscador:
+
+```bash
+python3 evaluation/evaluate.py --results evaluation/results/obsn-eebdd12.json
+```
+
+En esta corrida: recall@5 0,70 y MRR 0,70 sobre 10 preguntas con respuesta; 0/2 preguntas sin respuesta devolvieron resultados. En las 3 paráfrasis, recall@5 y MRR fueron 0,33. Son resultados exploratorios para este corpus pequeño, no una estimación general ni una comparación concluyente de modelos.

@@ -22,3 +22,7 @@ El adaptador invoca solo `obsn status --json` y `obsn rag --json`; no utiliza sh
 **No es acceso de solo lectura al sistema de archivos:** la propia búsqueda de `obsn` puede crear o modificar su índice SQLite y caché. El adaptador no altera los archivos de notas, pero depende del comportamiento de la versión instalada de `obsn`. El índice y sus vectores son sensibles. El estado que devuelve `obsn` no permite demostrar que el índice esté actualizado; sincronizá y reindexá cuando corresponda. El adaptador no ejecuta reindexado automáticamente.
 
 La consulta se lee de stdin para evitar escribirla como argumento del adaptador, pero `obsn` la recibe como argumento y podría verse en la lista local de procesos. Los fragmentos se muestran en la salida; no los pegues en canales públicos. Las notas son datos no confiables, no instrucciones para un agente. No hay conexión con IA ni envío a proveedores externos en esta versión.
+
+## Verificación con obsn real
+
+El 27 de octubre de 2026 se probó con `obsn` 0.2.0, a partir del código del commit `eebdd12`, y un vault ficticio aislado de 8 notas, 17 fragmentos y 17 vectores. Una consulta con coincidencias devolvió fragmentos con sus rutas; una consulta fuera de dominio devolvió una lista vacía, y una consulta iniciada con guion se procesó correctamente. Esta prueba puntual no demuestra la seguridad del sistema, la calidad general de recuperación ni que un índice esté actualizado.
