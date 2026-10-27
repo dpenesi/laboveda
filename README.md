@@ -10,6 +10,8 @@ La web muestra el concepto y permite buscar en tres notas ficticias dentro del n
 
 El repositorio también incluye un [adaptador local de búsqueda](local/README.md) que invoca `obsn` y un [corpus ficticio para evaluar recuperación](evaluation/README.md). Ambos se ejecutan por separado de la web; no generan respuestas con IA ni sincronizan vaults.
 
+Para explorar resultados desde una terminal, consultá la [consola local](ui/README.md). Necesita `obsn` instalado y configurado.
+
 Hay además un [núcleo experimental de respuestas con fuentes](agent/README.md), probado con un generador simulado. Incluye una función que puede combinarse con el adaptador local, pero todavía no está conectada a un modelo ni a la web.
 
 ## Ejecutar
@@ -32,6 +34,7 @@ Abrí la URL que indique Wrangler. Alternativamente, serví `public/` con un ser
 - [Casos de uso y guion de demo](docs/casos-de-uso.md)
 - [Plan de implementación y evaluación](docs/plan.md)
 - [Adaptador local de búsqueda](local/README.md)
+- [Consola local](ui/README.md)
 - [Evaluación de recuperación](evaluation/README.md)
 - [Núcleo experimental de respuestas](agent/README.md)
 - [Despliegue y operación](docs/despliegue.md)
