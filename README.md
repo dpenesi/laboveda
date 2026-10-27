@@ -30,4 +30,6 @@ Abrí la URL que indique Wrangler. Alternativamente, serví `public/` con un ser
 
 ## Privacidad y límites
 
+**Regla del repositorio:** todo su contenido es público. No se deben subir credenciales, datos personales, notas reales, información de clientes ni otros datos confidenciales o sensibles. Los ejemplos, fixtures y casos de uso deben usar únicamente datos inventados. Ver [reglas para contribuciones](AGENTS.md).
+
 La demo no envía las consultas ni los datos de ejemplo a una API de búsqueda. Cloudflare sirve los archivos del sitio; la tipografía se solicita a Google Fonts. No cargues información privada en el código ni en `public/`. La arquitectura real requiere revisión de seguridad, control de consentimiento y verificación de integridad antes de prometer protección contra un servidor malicioso.
