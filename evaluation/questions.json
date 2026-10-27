@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "questions": [
+    {"id":"q01","category":"exacta","query":"¿Qué decisiones tomó el proyecto Faro?","relevant":["proyecto/decisiones.md"]},
+    {"id":"q02","category":"exacta","query":"¿Cuáles son los próximos pasos del proyecto Faro?","relevant":["proyecto/pendientes.md"]},
+    {"id":"q03","category":"parafrasis","query":"¿Se podrán modificar apuntes automáticamente en el estreno?","relevant":["proyecto/decisiones.md"]},
+    {"id":"q04","category":"parafrasis","query":"¿Cómo evitar enviar contenido a otra empresa sin permiso?","relevant":["proyecto/decisiones.md","reuniones/reunion-dos.md"]},
+    {"id":"q05","category":"exacta","query":"¿Qué hacer si falla la conexión porque el servicio está detenido?","relevant":["operaciones/conexion.md"]},
+    {"id":"q06","category":"parafrasis","query":"¿Cómo volver a poner en marcha archivos guardados en un respaldo?","relevant":["operaciones/backup.md"]},
+    {"id":"q07","category":"exacta","query":"¿Cuándo es la práctica de la presentación?","relevant":["proyecto/pendientes.md"]},
+    {"id":"q08","category":"exacta","query":"¿Qué debe incluir cada respuesta para poder verificarla?","relevant":["reuniones/reunion-uno.md"]},
+    {"id":"q09","category":"exacta","query":"¿Qué es un jardín de lluvia?","relevant":["ideas/jardin.md"]},
+    {"id":"q10","category":"exacta","query":"¿Cómo se organizarían los libros en la biblioteca comunitaria?","relevant":["ideas/biblioteca.md"]},
+    {"id":"q11","category":"sin_respuesta","query":"¿Cuál es el precio de un pasaje a Marte?","relevant":[]},
+    {"id":"q12","category":"sin_respuesta","query":"¿Quién ganó el campeonato de ajedrez en 2024?","relevant":[]}
+  ]
+}

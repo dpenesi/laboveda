@@ -8,6 +8,8 @@ Demo pública: https://boveda-agente-devday.dpenesi.workers.dev
 
 La web muestra el concepto y permite buscar en tres notas ficticias dentro del navegador. Es una búsqueda por coincidencia de palabras: **no usa IA, no accede a un vault real y no conecta los dos proyectos**. Los datos de ejemplo son públicos y forman parte del sitio desplegado.
 
+El repositorio también incluye un [adaptador local de búsqueda](local/README.md) que invoca `obsn` y un [corpus ficticio para evaluar recuperación](evaluation/README.md). Ambos se ejecutan por separado de la web; no generan respuestas con IA ni sincronizan vaults.
+
 ## Ejecutar
 
 Requisitos: Node.js 22+ y npm. En este directorio:
@@ -16,6 +18,7 @@ Requisitos: Node.js 22+ y npm. En este directorio:
 npm install
 npm run dev
 npm test
+python3 -m unittest discover -s evaluation -p 'test_*.py'
 ```
 
 Abrí la URL que indique Wrangler. Alternativamente, serví `public/` con un servidor HTTP estático. Para publicar en Cloudflare Workers: configurá una cuenta con acceso de despliegue y ejecutá `npm run deploy`. Ver [despliegue](docs/despliegue.md).
@@ -26,6 +29,8 @@ Abrí la URL que indique Wrangler. Alternativamente, serví `public/` con un ser
 - [Arquitectura y decisiones](docs/arquitectura.md)
 - [Casos de uso y guion de demo](docs/casos-de-uso.md)
 - [Plan de implementación y evaluación](docs/plan.md)
+- [Adaptador local de búsqueda](local/README.md)
+- [Evaluación de recuperación](evaluation/README.md)
 - [Despliegue y operación](docs/despliegue.md)
 
 ## Privacidad y límites

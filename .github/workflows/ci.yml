@@ -1,0 +1,21 @@
+name: Comprobaciones
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '22'
+      - name: Pruebas de Node
+        run: npm test
+      - name: Pruebas de evaluación
+        run: python3 -m unittest discover -s evaluation -p 'test_*.py'

@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Ayudar a una persona a preguntar sobre sus propias notas y obtener una respuesta con fuentes, usando una copia local del vault. El sitio público de Cloudflare presenta el proyecto y una demo de ejemplo. El prototipo actual **no implementa** los componentes locales ni la llamada al modelo descritos a continuación.
+Ayudar a una persona a preguntar sobre sus propias notas y obtener una respuesta con fuentes, usando una copia local del vault. El sitio público de Cloudflare presenta el proyecto y una demo de ejemplo. El repositorio incluye un adaptador local independiente para consultar `obsn`; la conexión con la web, la sincronización integrada y la llamada al modelo descritas a continuación aún no están implementadas.
 
 ```mermaid
 flowchart LR
