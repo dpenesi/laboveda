@@ -8,6 +8,8 @@ Demo pública: https://boveda-agente-devday.dpenesi.workers.dev
 
 La web muestra el concepto y permite buscar en tres notas ficticias dentro del navegador. Es una búsqueda por coincidencia de palabras: **no usa IA, no accede a un vault real y no conecta los dos proyectos**. Los datos de ejemplo son públicos y forman parte del sitio desplegado.
 
+La página también incluye capturas de los estados de búsqueda, casos de uso previstos y un diagrama de arquitectura que distingue la demo actual del diseño futuro.
+
 El repositorio también incluye un [adaptador local de búsqueda](local/README.md) que invoca `obsn` y un [corpus ficticio para evaluar recuperación](evaluation/README.md). Ambos se ejecutan por separado de la web; no generan respuestas con IA ni sincronizan vaults.
 
 Para explorar resultados desde una terminal, consultá la [consola local](ui/README.md). Necesita `obsn` instalado y configurado.
