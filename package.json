@@ -1,0 +1,12 @@
+{
+  "name": "boveda-agente",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx wrangler dev",
+    "deploy": "npx wrangler deploy",
+    "test": "node --test"
+  },
+  "devDependencies": { "wrangler": "^4.0.0" }
+}
